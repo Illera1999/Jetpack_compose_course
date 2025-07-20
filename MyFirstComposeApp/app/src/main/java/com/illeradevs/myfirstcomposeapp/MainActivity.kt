@@ -10,6 +10,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.illeradevs.myfirstcomposeapp.components.layout.MyBox
+import com.illeradevs.myfirstcomposeapp.components.layout.MyColumn
+import com.illeradevs.myfirstcomposeapp.components.layout.MyRow
 import com.illeradevs.myfirstcomposeapp.login.Greeting
 import com.illeradevs.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
 
@@ -20,9 +23,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyFirstComposeAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Jose Manuel",
-                        modifier = Modifier.padding(innerPadding)
+                    MyRow(
+                        Modifier.padding(innerPadding)
                     )
                 }
             }
