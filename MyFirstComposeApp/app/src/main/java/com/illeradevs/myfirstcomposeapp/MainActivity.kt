@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.illeradevs.myfirstcomposeapp.components.layout.MyComplexLayout
+import com.illeradevs.myfirstcomposeapp.components.layout.RetoUno
 import com.illeradevs.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,7 +19,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyFirstComposeAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyComplexLayout(
+                    RetoUno(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
