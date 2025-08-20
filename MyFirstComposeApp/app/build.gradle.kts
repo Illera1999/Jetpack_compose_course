@@ -49,6 +49,9 @@ dependencies {
     implementation(libs.coil.network.okhttp)
 
 
+    // Lotti para animaciones
+    implementation(libs.lottie.compose)
+
 
 
     implementation(libs.androidx.core.ktx)
