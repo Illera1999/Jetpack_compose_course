@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+import com.illeradevs.myfirstcomposeapp.components.MySwitch
 import com.illeradevs.myfirstcomposeapp.components.ProgressAdvance
 import com.illeradevs.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
 
@@ -18,7 +19,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyFirstComposeAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    ProgressAdvance(modifier = Modifier.padding(innerPadding))
+                    MySwitch(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
