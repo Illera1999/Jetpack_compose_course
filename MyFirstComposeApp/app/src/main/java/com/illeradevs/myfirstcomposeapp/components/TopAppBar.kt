@@ -21,18 +21,18 @@ fun MyTopAppBar(modifier: Modifier = Modifier) {
         },
         navigationIcon = {
             Icon(
-                painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                painter = painterResource(id = R.drawable.ic_flutter),
                 contentDescription = "Icon",
             )
         },
         actions = {
 
             Icon(
-                painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                painter = painterResource(id = R.drawable.ic_flutter),
                 contentDescription = "Icon",
             )
             Icon(
-                painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                painter = painterResource(id = R.drawable.ic_flutter),
                 contentDescription = "Icon",
                 tint = Color.Green
             )
