@@ -1,7 +1,9 @@
 package com.illeradevs.myfirstcomposeapp.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
@@ -14,7 +16,7 @@ import com.illeradevs.myfirstcomposeapp.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MyTopAppBar(modifier: Modifier = Modifier) {
+fun MyTopAppBar(modifier: Modifier = Modifier, onNavSelected: () -> Unit) {
     TopAppBar(
         title = {
             Text(text = "My App")
@@ -23,6 +25,9 @@ fun MyTopAppBar(modifier: Modifier = Modifier) {
             Icon(
                 painter = painterResource(id = R.drawable.ic_flutter),
                 contentDescription = "Icon",
+                modifier = Modifier.clickable {
+                    onNavSelected()
+                }
             )
         },
         actions = {
@@ -38,7 +43,6 @@ fun MyTopAppBar(modifier: Modifier = Modifier) {
             )
         },
         colors = TopAppBarDefaults.topAppBarColors(
-
             containerColor = Color.Red,
             titleContentColor = Color.Green,
             navigationIconContentColor = Color.Blue,
