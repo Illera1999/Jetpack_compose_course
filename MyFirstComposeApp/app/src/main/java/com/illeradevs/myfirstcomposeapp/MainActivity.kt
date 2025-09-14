@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.illeradevs.myfirstcomposeapp.components.MyBadgedBox
+import com.illeradevs.myfirstcomposeapp.components.MyDivider
 import com.illeradevs.myfirstcomposeapp.components.MyOutlinedCard
 import com.illeradevs.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
 
@@ -19,7 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyFirstComposeAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyBadgedBox(Modifier.padding(innerPadding))
+                    MyDivider(Modifier.padding(innerPadding))
                 }
             }
         }
