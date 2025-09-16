@@ -7,10 +7,19 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.illeradevs.myfirstcomposeapp.components.MyBadgedBox
+import com.illeradevs.myfirstcomposeapp.components.MyCustomDialog
+import com.illeradevs.myfirstcomposeapp.components.MyDateDialog
+import com.illeradevs.myfirstcomposeapp.components.MyDialog
 import com.illeradevs.myfirstcomposeapp.components.MyDivider
 import com.illeradevs.myfirstcomposeapp.components.MyOutlinedCard
+import com.illeradevs.myfirstcomposeapp.components.MyTimePicker
+import com.illeradevs.myfirstcomposeapp.state.PokemonCombat
 import com.illeradevs.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,6 +27,18 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            var showDialog by remember { mutableStateOf(true) }
+            MyCustomDialog(
+                pokemonCombat = PokemonCombat("Pikachu", "Charmander"),
+                showDialog = showDialog,
+                onStartCombat = {
+                    // TODO: Start combat
+                    showDialog = false
+                },
+                onDismissDialog = {
+                    showDialog = false
+                },
+            )
             MyFirstComposeAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     MyDivider(Modifier.padding(innerPadding))

@@ -57,9 +57,9 @@ fun MyFirstComposeAppTheme(
         colorScheme = colorScheme,
         typography = Typography,
         content = content,
-        shapes = Shapes(
-            small = RoundedCornerShape(1.dp),
-            extraLarge = RoundedCornerShape(50)
-        )
+//        shapes = Shapes(
+//            small = RoundedCornerShape(1.dp),
+//            extraLarge = RoundedCornerShape(50)
+//        )
     )
 }
