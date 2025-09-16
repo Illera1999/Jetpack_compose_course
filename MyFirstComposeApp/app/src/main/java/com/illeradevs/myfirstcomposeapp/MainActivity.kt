@@ -19,6 +19,7 @@ import com.illeradevs.myfirstcomposeapp.components.MyDialog
 import com.illeradevs.myfirstcomposeapp.components.MyDivider
 import com.illeradevs.myfirstcomposeapp.components.MyOutlinedCard
 import com.illeradevs.myfirstcomposeapp.components.MyTimePicker
+import com.illeradevs.myfirstcomposeapp.components.advance.InteractionSourceExample
 import com.illeradevs.myfirstcomposeapp.state.PokemonCombat
 import com.illeradevs.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
 
@@ -27,21 +28,21 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            var showDialog by remember { mutableStateOf(true) }
-            MyCustomDialog(
-                pokemonCombat = PokemonCombat("Pikachu", "Charmander"),
-                showDialog = showDialog,
-                onStartCombat = {
-                    // TODO: Start combat
-                    showDialog = false
-                },
-                onDismissDialog = {
-                    showDialog = false
-                },
-            )
+//            var showDialog by remember { mutableStateOf(true) }
+//            MyCustomDialog(
+//                pokemonCombat = PokemonCombat("Pikachu", "Charmander"),
+//                showDialog = showDialog,
+//                onStartCombat = {
+//                    // TODO: Start combat
+//                    showDialog = false
+//                },
+//                onDismissDialog = {
+//                    showDialog = false
+//                },
+//            )
             MyFirstComposeAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyDivider(Modifier.padding(innerPadding))
+                    InteractionSourceExample(Modifier.padding(innerPadding))
                 }
             }
         }
