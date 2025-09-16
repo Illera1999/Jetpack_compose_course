@@ -20,6 +20,7 @@ import com.illeradevs.myfirstcomposeapp.components.MyDivider
 import com.illeradevs.myfirstcomposeapp.components.MyOutlinedCard
 import com.illeradevs.myfirstcomposeapp.components.MyTimePicker
 import com.illeradevs.myfirstcomposeapp.components.advance.InteractionSourceExample
+import com.illeradevs.myfirstcomposeapp.components.advance.MyLaunchedEffect
 import com.illeradevs.myfirstcomposeapp.state.PokemonCombat
 import com.illeradevs.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
 
@@ -42,7 +43,7 @@ class MainActivity : ComponentActivity() {
 //            )
             MyFirstComposeAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    InteractionSourceExample(Modifier.padding(innerPadding))
+                    MyLaunchedEffect(Modifier.padding(innerPadding))
                 }
             }
         }
