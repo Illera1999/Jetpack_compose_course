@@ -13,6 +13,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.illeradevs.myfirstcomposeapp.components.MyBadgedBox
+import com.illeradevs.myfirstcomposeapp.components.MyBasicList
 import com.illeradevs.myfirstcomposeapp.components.MyCustomDialog
 import com.illeradevs.myfirstcomposeapp.components.MyDateDialog
 import com.illeradevs.myfirstcomposeapp.components.MyDialog
@@ -20,6 +21,7 @@ import com.illeradevs.myfirstcomposeapp.components.MyDivider
 import com.illeradevs.myfirstcomposeapp.components.MyOutlinedCard
 import com.illeradevs.myfirstcomposeapp.components.MyTimePicker
 import com.illeradevs.myfirstcomposeapp.components.advance.InteractionSourceExample
+import com.illeradevs.myfirstcomposeapp.components.advance.MyDerivedSatateOf
 import com.illeradevs.myfirstcomposeapp.components.advance.MyLaunchedEffect
 import com.illeradevs.myfirstcomposeapp.state.PokemonCombat
 import com.illeradevs.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
@@ -43,7 +45,12 @@ class MainActivity : ComponentActivity() {
 //            )
             MyFirstComposeAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyLaunchedEffect(Modifier.padding(innerPadding))
+                    MyBasicList(
+                        Modifier.padding(innerPadding),
+                        onItemClick =  { valor ->
+                            println("Clicked $valor")
+                        },
+                    )
                 }
             }
         }
