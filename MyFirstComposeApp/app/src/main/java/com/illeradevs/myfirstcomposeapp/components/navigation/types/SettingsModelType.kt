@@ -2,8 +2,6 @@ package com.illeradevs.myfirstcomposeapp.components.navigation.types
 
 import android.net.Uri
 import android.os.Build
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavType
 import androidx.savedstate.SavedState
 import com.illeradevs.myfirstcomposeapp.components.navigation.examples.SettingModel

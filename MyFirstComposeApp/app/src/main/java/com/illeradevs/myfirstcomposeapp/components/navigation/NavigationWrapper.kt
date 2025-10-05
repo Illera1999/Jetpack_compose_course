@@ -11,6 +11,7 @@ import com.illeradevs.myfirstcomposeapp.components.navigation.examples.HomeScree
 import com.illeradevs.myfirstcomposeapp.components.navigation.examples.LoginScreen
 import com.illeradevs.myfirstcomposeapp.components.navigation.examples.SettingModel
 import com.illeradevs.myfirstcomposeapp.components.navigation.examples.SettingScreen
+import com.illeradevs.myfirstcomposeapp.components.navigation.types.createNavType
 import com.illeradevs.myfirstcomposeapp.components.navigation.types.settingsModelType
 import kotlin.reflect.typeOf
 
@@ -50,9 +51,19 @@ fun NavigationWrapper(modifier: Modifier = Modifier) {
             )
         }
 
-        composable<Settings> (typeMap= mapOf(typeOf<SettingModel>() to settingsModelType)){ navBackStackEntry ->
+        composable<Settings>(typeMap = mapOf(typeOf<SettingModel>() to createNavType<SettingModel>())) { navBackStackEntry ->
             val settings = navBackStackEntry.toRoute<Settings>()
-            SettingScreen(settings.settingModel)
+            SettingScreen(
+                settingModel = settings.settingModel,
+                navigateBack = {
+                    navController.navigate(Login){
+                        popUpTo<Login>{
+                            inclusive = true
+                        }
+                    }
+//                    navController.popBackStack()
+                }
+            )
         }
     }
 }

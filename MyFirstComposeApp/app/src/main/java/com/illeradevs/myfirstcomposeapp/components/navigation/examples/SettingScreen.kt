@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.sp
 
 
 @Composable
-fun SettingScreen(settingModel: SettingModel) {
+fun SettingScreen(settingModel: SettingModel, navigateBack: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -32,7 +32,7 @@ fun SettingScreen(settingModel: SettingModel) {
             modifier = Modifier.weight(1f)
         )
         Button(
-            onClick = { },
+            onClick = { navigateBack() },
         ) {
             Text(text = "Volver al inicio")
         }
