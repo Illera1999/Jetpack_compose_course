@@ -9,6 +9,10 @@ import androidx.navigation.toRoute
 import com.illeradevs.myfirstcomposeapp.components.navigation.examples.DetailScreen
 import com.illeradevs.myfirstcomposeapp.components.navigation.examples.HomeScreen
 import com.illeradevs.myfirstcomposeapp.components.navigation.examples.LoginScreen
+import com.illeradevs.myfirstcomposeapp.components.navigation.examples.SettingModel
+import com.illeradevs.myfirstcomposeapp.components.navigation.examples.SettingScreen
+import com.illeradevs.myfirstcomposeapp.components.navigation.types.settingsModelType
+import kotlin.reflect.typeOf
 
 
 @Composable
@@ -30,17 +34,25 @@ fun NavigationWrapper(modifier: Modifier = Modifier) {
                 navigateBack = {
                     navController.popBackStack()
                 },
-                navigateToDetail =  { id, jose ->
+                navigateToDetail = { id, jose ->
                     navController.navigate(Detail(id = id, test = jose))
                 },
             )
         }
         composable<Detail> { navBackStackEntry ->
-            var detail = navBackStackEntry.toRoute<Detail>()
+            val detail = navBackStackEntry.toRoute<Detail>()
             println(detail.test)
-            DetailScreen(detail.id)
+            DetailScreen(
+                id = detail.id,
+                navihateToSetting = {
+                    navController.navigate(Settings(settingModel = it))
+                }
+            )
         }
 
+        composable<Settings> (typeMap= mapOf(typeOf<SettingModel>() to settingsModelType)){ navBackStackEntry ->
+            val settings = navBackStackEntry.toRoute<Settings>()
+            SettingScreen(settings.settingModel)
+        }
     }
-
 }

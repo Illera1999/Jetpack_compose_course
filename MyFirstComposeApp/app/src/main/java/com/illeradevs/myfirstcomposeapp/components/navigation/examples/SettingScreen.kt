@@ -12,23 +12,32 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
 
+
 @Composable
-fun DetailScreen(id: String, navihateToSetting: (SettingModel) -> Unit) {
-    var settingModel = SettingModel("1", true)
+fun SettingScreen(settingModel: SettingModel) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Gray),
+            .background(Color.Cyan),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Spacer(modifier = Modifier.weight(1f))
-        Text(text = "Detail: $id", fontSize = 30.sp)
-        Spacer(modifier = Modifier.weight(1f))
+        Spacer(
+            modifier = Modifier.weight(1f)
+        )
+        Text(
+            text = "Settings: ${settingModel.id}, DarkMode: ${settingModel.darkMode}",
+            fontSize = 30.sp
+        )
+        Spacer(
+            modifier = Modifier.weight(1f)
+        )
         Button(
-            onClick = { navihateToSetting(settingModel) },
+            onClick = { },
         ) {
-            Text(text = "Ajustes")
+            Text(text = "Volver al inicio")
         }
-        Spacer(modifier = Modifier.weight(1f))
+        Spacer(
+            modifier = Modifier.weight(1f)
+        )
     }
 }
