@@ -27,6 +27,7 @@ import com.illeradevs.myfirstcomposeapp.components.advance.InteractionSourceExam
 import com.illeradevs.myfirstcomposeapp.components.advance.MyDerivedSatateOf
 import com.illeradevs.myfirstcomposeapp.components.advance.MyLaunchedEffect
 import com.illeradevs.myfirstcomposeapp.components.animations.FullAnimateAsState
+import com.illeradevs.myfirstcomposeapp.components.animations.MyAnimateContentSize
 import com.illeradevs.myfirstcomposeapp.components.animations.MyAnimatedContent
 import com.illeradevs.myfirstcomposeapp.components.animations.MyAnimatedVisibility
 import com.illeradevs.myfirstcomposeapp.components.animations.MyCrossfade
@@ -41,7 +42,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyFirstComposeAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyAnimatedContent(
+                    MyAnimateContentSize(
                         Modifier.padding(innerPadding),
                     )
                 }
