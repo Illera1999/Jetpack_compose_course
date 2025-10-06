@@ -28,6 +28,7 @@ import com.illeradevs.myfirstcomposeapp.components.advance.MyDerivedSatateOf
 import com.illeradevs.myfirstcomposeapp.components.advance.MyLaunchedEffect
 import com.illeradevs.myfirstcomposeapp.components.animations.FullAnimateAsState
 import com.illeradevs.myfirstcomposeapp.components.animations.MyAnimatedVisibility
+import com.illeradevs.myfirstcomposeapp.components.animations.MyCrossfade
 import com.illeradevs.myfirstcomposeapp.components.navigation.NavigationWrapper
 import com.illeradevs.myfirstcomposeapp.state.PokemonCombat
 import com.illeradevs.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
@@ -39,7 +40,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyFirstComposeAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    FullAnimateAsState(
+                    MyCrossfade(
                         Modifier.padding(innerPadding),
                     )
                 }
