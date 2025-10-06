@@ -26,6 +26,7 @@ import com.illeradevs.myfirstcomposeapp.components.ScrollList
 import com.illeradevs.myfirstcomposeapp.components.advance.InteractionSourceExample
 import com.illeradevs.myfirstcomposeapp.components.advance.MyDerivedSatateOf
 import com.illeradevs.myfirstcomposeapp.components.advance.MyLaunchedEffect
+import com.illeradevs.myfirstcomposeapp.components.animations.MyAnimatedVisibility
 import com.illeradevs.myfirstcomposeapp.components.navigation.NavigationWrapper
 import com.illeradevs.myfirstcomposeapp.state.PokemonCombat
 import com.illeradevs.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
@@ -37,7 +38,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyFirstComposeAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    NavigationWrapper(
+                    MyAnimatedVisibility(
                         Modifier.padding(innerPadding),
                     )
                 }

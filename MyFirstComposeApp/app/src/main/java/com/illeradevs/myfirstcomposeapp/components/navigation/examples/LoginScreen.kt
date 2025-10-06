@@ -56,8 +56,5 @@ fun LoginScreen(navigateToDetail: () -> Unit) {
                 .fillMaxSize()
                 .background(Color.Red),
         )
-
-
     }
-
 }
