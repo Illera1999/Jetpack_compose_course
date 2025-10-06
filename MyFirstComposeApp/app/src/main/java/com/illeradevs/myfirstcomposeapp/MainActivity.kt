@@ -31,6 +31,7 @@ import com.illeradevs.myfirstcomposeapp.components.animations.MyAnimateContentSi
 import com.illeradevs.myfirstcomposeapp.components.animations.MyAnimatedContent
 import com.illeradevs.myfirstcomposeapp.components.animations.MyAnimatedVisibility
 import com.illeradevs.myfirstcomposeapp.components.animations.MyCrossfade
+import com.illeradevs.myfirstcomposeapp.components.animations.MyInfinityTransition
 import com.illeradevs.myfirstcomposeapp.components.navigation.NavigationWrapper
 import com.illeradevs.myfirstcomposeapp.state.PokemonCombat
 import com.illeradevs.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
@@ -42,7 +43,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyFirstComposeAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyAnimateContentSize(
+                    MyInfinityTransition(
                         Modifier.padding(innerPadding),
                     )
                 }
