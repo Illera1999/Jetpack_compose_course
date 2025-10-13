@@ -21,22 +21,20 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.illeradevs.instadev.R
 
 @Preview
 @Composable
-fun LoginScreen() {
-    var email by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
+fun LoginScreen(loginViewModel: LoginViewModel = viewModel()) {
+    val uiState by loginViewModel.uiState.collectAsStateWithLifecycle()
     Scaffold { padding ->
         Column(
             modifier = Modifier
@@ -65,14 +63,14 @@ fun LoginScreen() {
             OutlinedTextField(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(30),
-                value = email,
+                value = uiState.email,
                 label = {
                     Text(
                         text = "Usuario, correo electrónico o móvil"
                     )
                 },
                 onValueChange = {
-                    email = it
+                    loginViewModel.onEmailChange(email = it)
                 }
             )
             Spacer(
@@ -81,14 +79,14 @@ fun LoginScreen() {
             OutlinedTextField(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(30),
-                value = password,
+                value = uiState.password,
                 label = {
                     Text(
                         text = "Contraseña"
                     )
                 },
                 onValueChange = {
-                    password = it
+                    loginViewModel.onPasswordChange(password = it)
                 }
             )
             Spacer(
@@ -99,6 +97,7 @@ fun LoginScreen() {
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.Blue
                 ),
+                enabled = uiState.isLoadingEnabled,
                 onClick = {}
             ) {
                 Text(
